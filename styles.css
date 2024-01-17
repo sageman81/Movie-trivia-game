@@ -5,6 +5,16 @@ body {
 
 }
 
+.points-counter {
+    text-align: right;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 #trivia {
     text-align: center;
     padding: 20px;

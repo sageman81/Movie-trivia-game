@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const questionEl = document.getElementById('question');
     const answerButtons = document.querySelectorAll('.answer');
+    const pointsEl = document.getElementById('pointsCounter');
+    let points = 0; //point counter
 
 let questions = [
     {
@@ -41,6 +43,11 @@ let questions = [
 
 let currentQuestionIndex = 0;
 
+function updatePointsDisplay() {
+    pointsEl.textContent = 'Points: ' + points;
+
+}
+
 function setQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     questionEl.textContent = currentQuestion.question;
@@ -53,7 +60,8 @@ function setQuestion() {
 function selectAnswer(answer) {
     let currentQuestion = questions[currentQuestionIndex];
     if (answer === currentQuestion.correctAnswer) {
-        alert("Correct!");
+        points++;
+        updatePointsDisplay();
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
             setQuestion();
@@ -61,11 +69,12 @@ function selectAnswer(answer) {
             alert("Quiz complete!") //***return to main screen or show results*/
         }
     } else {
-        alert("Incorrect!");
+        points--;
+        alert("Incorrect! You lost a point! Your points: " + points);
     }
 }
-
+updatePointsDisplay();
 setQuestion();
 
 });
-    
+  
