@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const answerButtons = document.querySelectorAll('.answer');
     const pointsEl = document.getElementById('pointsCounter');
     let points = 0; //point counter
+    let timer; //timer function
 
 let questions = [
     {
@@ -48,31 +49,66 @@ function updatePointsDisplay() {
 
 }
 
+let countdown;
+let timeLeft = 30;
+
+function updateTimerDisplay() {
+    document.getElementById('timerDisplay').textContent = timeLeft;
+}
+
+function startTimer() {
+    timeLeft =  30; 
+    updateTimerDisplay();
+
+    countdown = setInterval(function() {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            alert("Time's up!");
+            moveToNextQuestion();
+        }
+    }, 1000);
+    }
+
+
+
 function setQuestion() {
+    clearInterval(countdown);//clears the timer
     let currentQuestion = questions[currentQuestionIndex];
     questionEl.textContent = currentQuestion.question;
     answerButtons.forEach((button, index) => {
         button.textContent = currentQuestion.answers[index];
         button.onclick = function() { selectAnswer(currentQuestion.answers[index]);}
     });
+    startTimer(); //start timer for new section
 }
 
 function selectAnswer(answer) {
     let currentQuestion = questions[currentQuestionIndex];
     if (answer === currentQuestion.correctAnswer) {
         points++;
-        updatePointsDisplay();
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            setQuestion();
-        } else {
-            alert("Quiz complete!") //***return to main screen or show results*/
-        }
+        alert("Correct! Your points: " + points); //***return to main screen or show results*/
+        
     } else {
         points--;
         alert("Incorrect! You lost a point! Your points: " + points);
     }
+    updatePointsDisplay();
+    moveToNextQuestion();
 }
+
+
+function moveToNextQuestion() {
+    clearInterval(countdown);
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        setQuestion();
+    } else {
+        alert("Quiz complete! Total Score : " + points);
+    }
+    }
+
 updatePointsDisplay();
 setQuestion();
 
