@@ -1,15 +1,37 @@
 .start-screen {
-    display: block;
-    text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+#startButton {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+}
+
+#startButton:hover {
+    background-color: #e63900;
+}
 
 body {
     text-align: center;
     
+}
 
-
+#questionImage {
+    max-width: 100%;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .timer-display {
@@ -18,8 +40,6 @@ body {
     color: #333;
     border: solid 1px #ddd;
     padding: 10px;
-    margin-top: 10px;
-    width: 50px;
     margin-top: 10px;
     width: 50px;
     margin-left: auto;
@@ -48,13 +68,7 @@ body {
     border-radius: 5px;
 }
 
-#trivia {
-    text-align: center;
-    padding: 20px;
-    grid-area: auto;
-    grid-template-columns: repeat(2, auto);
 
-}
 
 #question {
     margin-bottom: 20px;
@@ -62,8 +76,10 @@ body {
 
 .answer {
     display: block;
-    margin: 10px auto;
+    margin: 5px auto;
     padding: 10px 20px;
+    width: 200px;
+    text-align: center;
 }
 
 
@@ -71,7 +87,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
-    gap: 10px;
+    gap: 5px;
     margin: 10px;
     justify-content: center;
     align-items: center;

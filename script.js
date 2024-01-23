@@ -16,31 +16,36 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             question: "What year was the Godfather released?",
             answers: ["1969", "1972", "1978", "1980"],
-            correctAnswer: "1972"
+            correctAnswer: "1972",
+            image: "https://images5.alphacoders.com/615/615040.jpg" //place gf image here
         },
     
         {
             question: "Who directed 'Pulp Fiction'?",
             answers: ["Steven Spielberg", "James Cameron", "Martin Scorcesse", "Quentin Tarantino"],
-            correctAnswer: "Quentin Tarantino"
+            correctAnswer: "Quentin Tarantino",
+            image: "https://filmcolossus.com/wp-content/uploads/2023/05/VideoScreenshot-File1Jz369WSLD80-Vidcloud-6542-e1684891485948.jpg"//pulp fiction image
         },
     
         {
             question: "What does Jack Burton like to say in 'Big Trouble in Little China'?",
             answers: ["It's all in the reflexes.", "I love the smell of Napalm in the morning.", "All work and no play makes Jack a dull boy.", "I'm too old for this..."],
-            correctAnswer: "It's all in the reflexes."
+            correctAnswer: "It's all in the reflexes.",
+            image: "https://worldfilmgeek.files.wordpress.com/2019/04/bigtroubleinlittlechina-still.jpg"
         },
     
         {
             question: "What is Darth Vader's famous line from 'The Empire Strikes Back'?",
             answers: ["Luke, I am your father.", "Luke, I'm your father.", "No, I am your father.", "I ain't your daddy!"],
-            correctAnswer: "No, I am your father."
+            correctAnswer: "No, I am your father.",
+            image: "https://images6.alphacoders.com/584/584828.jpg"
         },
     
         {
             question: "Who was almost cast to star in the Terminator before Arnold Schwarzenegger got the role?",
             answers: ["Sylvester Stallone", "Jean-Claude Van Damme", "O.J. Simpson", "Hulk Hogan"],
-            correctAnswer: "O.J. Simpson"
+            correctAnswer: "O.J. Simpson",
+            image: "https://images.squarespace-cdn.com/content/v1/59e512ddf43b55c29c71b996/3f10e1fc-e608-49af-86ce-b86d7ccadf73/TERMSE_SIDEA-22.jpg?format=1500w"
     
         }
     ];
@@ -80,6 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(countdown);//clears the timer
         let currentQuestion = questions[currentQuestionIndex];
         questionEl.textContent = currentQuestion.question;
+
+        let imageEl = document.getElementById('questionImage');
+        imageEl.src = currentQuestion.image;
+
         answerButtons.forEach((button, index) => {
             button.textContent = currentQuestion.answers[index];
             button.onclick = function() { selectAnswer(currentQuestion.answers[index]);}
