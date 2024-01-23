@@ -1,9 +1,13 @@
 .start-screen {
+    background: url(https://cdn.pixabay.com/photo/2017/09/04/09/37/cinema-strip-2713352_1280.jpg) no-repeat center center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: white;
+
 }
 
 #startButton {
@@ -15,6 +19,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3 ease;
+
 }
 
 #startButton:hover {
@@ -56,6 +61,13 @@ body {
 
 .game-started #trivia {
     display: block;
+}
+
+.feedback {
+    color: blue;
+    margin: 10px;
+    height: 20px;
+    text-align: center;
 }
 
 .points-counter {

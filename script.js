@@ -98,16 +98,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function selectAnswer(answer) {
         let currentQuestion = questions[currentQuestionIndex];
+        //feedback status tool instead of alert
+        let feedbackEl = document.getElementById('feedback');
+
         if (answer === currentQuestion.correctAnswer) {
             points++;
-            alert("Correct! Your points: " + points); //***return to main screen or show results*/
+            feedbackEl.textContent = ("Correct! Your points: " + points); //***return to main screen or show results*/
             
         } else {
             points--;
-            alert("Incorrect! You lost a point! Your points: " + points);
+            feedbackEl.textContent("Incorrect! You lost a point! Your points: " + points);
         }
         updatePointsDisplay();
-        moveToNextQuestion();
+        setTimeout(function() {
+            feedbackEl.textContent = '';
+            moveToNextQuestion();
+         }, 2000);
+
     }
     
     
