@@ -1,21 +1,2 @@
-// function selectAnswer(answer) {
-//     let currentQuestion = questions[currentQuestionIndex];
-//     if (answer === currentQuestion.correctAnswer) {
-//         points++;
-//         updatePointsDisplay();
-//         currentQuestionIndex++;
-//         if (currentQuestionIndex < questions.length) {
-//             setQuestion();
-//         } else {
-//             alert("Quiz complete!") //***return to main screen or show results*/
-//         }
-//     } else {
-//         points--;
-//         alert("Incorrect! You lost a point! Your points: " + points);
-//     }
-// }
-// updatePointsDisplay();
-// setQuestion();
-
-// });
-  
+//bugs with moving screen
+//bugs with quickly hitting answer choices and running up points
