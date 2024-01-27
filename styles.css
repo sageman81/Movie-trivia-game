@@ -1,21 +1,47 @@
 
-@media (max-width :600px) {
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 4vw;
+        padding: 10px;
+        text-align: center;
+    }
+
+    p {
+        font-size:  2vw;
+        padding: 5px;
+        text-align: center;
+    }
+
+    body {
+        margin: 0;
+        padding: 5px;
+    }
+
     .start-screen h1 {
-        font-size: 4em;
-        color: #fff ;
-    
-        margin-bottom: 30px;
+        font-size: 2em;
     }
 
     #startButton{
         font-size: 1em;
-        padding: 1em 2em;
-        background-color: #e63900;
+        padding: 10px 20px;
     }
 
     .button-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
+
+    .points-counter, .timer-display {
+        font-size: 20px;
+        width: auto;
+        padding: 10px;
+    }
+
+    #question {
+        font-size: 1.5em;
+
+    }
+
 }
 
 .start-screen  {
