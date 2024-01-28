@@ -1,2 +1,30 @@
-//bugs with moving screen
-//bugs with quickly hitting answer choices and running up points
+//link https://sageman81.github.io/Movie-trivia-game/
+
+
+
+//i keep getting an error message????
+// Technologies Used
+// HTML: Structures the content and layout of the game interface.
+// CSS: Styles the appearance of the game, including the layout, colors, and fonts.
+// JavaScript: Powers the game's logic, handling question display, timer countdown, answer validation, and score tracking.
+// Movie Trivia is a web-based game that is designed to test the knowledge of popular and cult films alike. The game is mulitiple choice, has a timer element, and keeps score throughout the game.
+// Clone the Repository: Clone this repository to your local machine using git clone <repository-url>.
+// Open the Project: Navigate to the project directory and open the index.html file in your preferred web browser.
+// Play the Game: Click the "Start" button to begin the trivia quiz. Answer the questions as quickly as possible to score points.
+// installation instructions
+
+// Clone the Repository: Clone this repository to your local machine using git clone <repository-url>.
+// Open the Project: Navigate to the project directory and open the index.html file in your preferred web browser.
+// Play the Game: Click the "Start" button to begin the trivia quiz. Answer the questions as quickly as possible to score points.
+// User SpeechRecognitionResultList
+
+// wireframes
+
+//i cant get screenshots for some reason. even my googleslide show of my propal
+
+// Unsolved Mysteries 
+//I cant resize anything for mobile or a desktop thats minimized
+
+//I've looked as so many websites adn frankeistened this game. I need to winnow the code and get essential ellemenst. I feel like i have redundancies. 
+
+//Issues. I need to cancel answer options after selection, if I keep clicking on an answer the points keep counting up. Also... the timer continues after selection 
